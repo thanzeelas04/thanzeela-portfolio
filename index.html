@@ -539,7 +539,7 @@ function homeHTML(){
     <div class="edu"><div><h3 class="mono ac">Education</h3><h4>${esc(A.education.title)}</h4><p>${esc(A.education.place)}<br><span class="mono">${A.education.when}</span></p></div>
      <div><h3 class="mono ac">Internship</h3><h4>${esc(A.intern.title)}</h4><p>${esc(A.intern.place)} · <span class="mono">${A.intern.when}</span></p><p style="margin-top:10px">${esc(A.intern.text)}</p></div></div>
    </div></div></section>
-  <section id="contact"><div class="wrap contact"><span class="mono ac">Closing file</span><h2 style="margin-top:20px">Have something worth documenting?</h2>
+  <section id="contact"><div class="wrap contact"><span class="mono ac">Closing file</span><h2 style="margin-top:20px">Ready to Open a New Project?</h2>
    <p class="s">For collaborations, opportunities, or creative conversations, get in touch.</p>
    <div class="clist"><a href="mailto:${C.email}" id="mailLink"><span>${esc(C.email)}</span><span class="mono dim">Email ↗</span></a>
    ${C.links.map(l=>l.url?`<a href="${esc(l.url)}" target="_blank" rel="noopener"><span>${l.label}</span><span class="mono dim">Open ↗</span></a>`:`<div class="off"><span>${l.label}</span><span class="mono">Add link in CFG</span></div>`).join('')}</div></div></section>`}
