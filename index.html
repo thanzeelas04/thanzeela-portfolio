@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thanzeela S — Creative Archive / 001</title>
+<meta name="description" content="Thanzeela S — multidisciplinary designer. A private archive of branding, packaging, poster and visual design case files.">
+<meta name="theme-color" content="#101010">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#101010;--s2:#191919;--s3:#202020;--tx:#EAE6DF;--tx2:#9B9892;--ln:#383633;--ac:#8D2929;--act:#C26262;
+--serif:'Cormorant Garamond','Cormorant',Georgia,serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+--pad:clamp(20px,4vw,64px);--max:1360px;--hdr:64px;
+color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + var(--hdr) + 8px);overflow-x:clip;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--tx);font:300 1rem/1.7 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip;min-height:100vh}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+h1,h2,h3,p,ul,ol,figure,dl,dd{margin:0;padding:0}ul,ol{list-style:none}
+:focus-visible{outline:1px solid var(--tx);outline-offset:4px}
+::selection{background:var(--ac);color:var(--tx)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:400}
+.dim{color:var(--tx2)}.ac{color:var(--act)}
+.serif{font-family:var(--serif);font-weight:300;letter-spacing:-.01em}
+/* ambient light + grid */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+background:repeating-linear-gradient(90deg,transparent 0 calc(100%/12 - 1px),rgba(234,230,223,.035) calc(100%/12 - 1px) calc(100%/12))}
+.lamp{position:fixed;inset:0;pointer-events:none;z-index:50;background:radial-gradient(420px circle at var(--mx,50%) var(--my,40%),rgba(245,226,176,.075),transparent 70%)}
+#ball{position:fixed;left:0;top:0;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;pointer-events:none;z-index:9999;opacity:0;
+background:radial-gradient(circle,#fffaf0 0,#f6e7bf 45%,rgba(246,231,191,.0) 72%);box-shadow:0 0 16px 5px rgba(246,231,191,.5),0 0 60px 22px rgba(246,231,191,.14);transition:opacity .3s}
+#ball i{position:absolute;inset:0;border-radius:50%;transition:transform .25s}
+#ball.on{opacity:1}#ball.big i{transform:scale(2.4)}
+.has-ball,.has-ball a,.has-ball button,.has-ball .fig{cursor:none}
+@media (pointer:coarse),(hover:none){#ball,.lamp{display:none}}
+main,header,footer{position:relative;z-index:1}
+/* boot */
+#boot{position:fixed;inset:0;z-index:10000;background:var(--bg);display:grid;place-content:center;gap:14px;text-align:center;transition:opacity .5s,visibility .5s}
+#boot.done{opacity:0;visibility:hidden}
+#boot .bar{height:1px;background:var(--ln);position:relative;overflow:hidden;width:200px;margin:0 auto}
+#boot .bar::after{content:"";position:absolute;inset:0;background:var(--act);transform:translateX(-100%);animation:ld .9s ease forwards}
+@keyframes ld{to{transform:none}}
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;height:var(--hdr);background:rgba(16,16,16,.97);border-bottom:1px solid var(--ln)}
+header.top .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-family:var(--serif);font-size:1.35rem;letter-spacing:.28em;font-weight:400}
+.status{display:none;color:var(--tx2)}
+nav ul{display:flex;gap:clamp(18px,3vw,40px)}
+nav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tx2);padding:6px 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+nav a:hover,nav a.cur{color:var(--tx);border-color:var(--ac)}
+.menu-btn{display:none;width:44px;height:44px;margin-right:-10px;position:relative}
+.menu-btn span{position:absolute;left:11px;right:11px;height:1px;background:var(--tx);transition:transform .3s,top .3s}
+.menu-btn span:nth-child(1){top:18px}.menu-btn span:nth-child(2){top:25px}
+.open .menu-btn span:nth-child(1){top:21px;transform:rotate(45deg)}.open .menu-btn span:nth-child(2){top:21px;transform:rotate(-45deg)}
+@media(min-width:1000px){.status{display:block}}
+@media(max-width:760px){.menu-btn{display:block}
+nav{position:fixed;inset:calc(env(safe-area-inset-top,0px) + var(--hdr)) 0 0 0;background:var(--bg);padding:40px var(--pad);visibility:hidden;opacity:0;transition:opacity .3s,visibility .3s}
+.open nav{visibility:visible;opacity:1}
+nav ul{flex-direction:column;gap:0}
+nav a{display:block;font-family:var(--serif);font-size:2.4rem;letter-spacing:0;text-transform:none;color:var(--tx);padding:14px 0;border-bottom:1px solid var(--ln)}
+.rbtn{margin-top:28px;padding:14px 22px;font-size:.8rem}}
+/* buttons */
+.rbtn{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tx);border:1px solid var(--tx2);padding:8px 14px;line-height:1.2;transition:background .3s,color .3s,border-color .3s}
+.rbtn:hover{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:15px 24px;border:1px solid var(--tx);font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;transition:background .3s,color .3s,border-color .3s}
+.btn:hover{background:var(--tx);color:var(--bg)}
+.btn.ghost{border-color:var(--ln);color:var(--tx2)}.btn.ghost:hover{background:transparent;color:var(--tx);border-color:var(--tx)}
+.lnk{border-bottom:1px solid var(--ln);transition:border-color .25s,color .25s}.lnk:hover{border-color:var(--act);color:var(--tx)}
+/* view transition */
+#view{animation:in .7s ease both}
+@keyframes in{from{opacity:0;transform:translateY(10px)}}
+/* hero */
+.hero{min-height:calc(100svh - var(--hdr));display:flex;flex-direction:column;justify-content:space-between;padding:clamp(28px,5vw,56px) 0 clamp(28px,4vw,48px);position:relative}
+.hero-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;color:var(--tx2)}
+.reg{width:44px;height:44px;flex:none;color:var(--ln)}
+.hero-main{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end;margin:clamp(40px,8vh,96px) 0}
+.hn{grid-column:1/10;min-width:0}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,7vw,5.6rem);line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.hero h1 em{font-style:italic;color:var(--tx2)}
+.hsub{margin-top:clamp(22px,3vw,40px);font-family:var(--serif);font-weight:300;font-size:clamp(1.3rem,2.4vw,2.1rem);line-height:1.2;color:var(--tx);max-width:24ch;padding-left:16px;border-left:1px solid var(--ac)}
+.hero-idx{grid-column:10/13;border-top:1px solid var(--ln)}
+.hero-idx a{display:flex;gap:14px;padding:11px 0;border-bottom:1px solid var(--ln);color:var(--tx2);transition:color .25s,padding .25s}
+.hero-idx a:hover{color:var(--tx);padding-left:8px}.hero-idx b{font-weight:400;color:var(--act);min-width:56px}
+.hero-idx a>span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.hero-low{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end}
+.hero-low p{grid-column:1/6;color:var(--tx2);max-width:46ch;font-size:1.05rem}
+.ctas{grid-column:7/13;display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+@media(max-width:900px){.hn,.hero-idx,.hero-low p,.ctas{grid-column:1/-1}.ctas{justify-content:flex-start}.hero-idx{margin-top:8px}}
+/* sections */
+section{padding:clamp(64px,10vw,140px) 0;border-top:1px solid var(--ln)}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(28px,4vw,56px)}
+.sh h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1;letter-spacing:-.01em}
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:6px 22px;margin-bottom:clamp(28px,4vw,48px)}
+.filters button{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tx2);padding:10px 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+.filters button:hover{color:var(--tx)}
+.filters button[aria-pressed=true]{color:var(--tx);border-color:var(--ac)}
+.filters sup{color:var(--act);margin-left:4px;font-size:.65rem}
+/* index grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(40px,5vw,64px) 24px;align-items:start}
+.card{min-width:0}
+.card[hidden]{display:none}
+.card a{display:block}
+.thumb{position:relative;overflow:hidden;background:var(--s2);border:1px solid var(--ln);aspect-ratio:1/1}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:filter .6s;filter:saturate(.9) brightness(.9)}
+.card a:hover .thumb img{filter:none}
+.thumb .tag{position:absolute;left:0;top:0;background:var(--bg);padding:7px 12px;border-right:1px solid var(--ln);border-bottom:1px solid var(--ln);color:var(--act)}
+.cmeta{display:flex;justify-content:space-between;gap:12px;margin:18px 0 6px;color:var(--tx2)}
+.card h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.05}
+.card p.d{color:var(--tx2);margin:10px 0 16px;max-width:52ch;font-size:.95rem}
+.card .go{display:inline-block;border-bottom:1px solid var(--ln);padding-bottom:3px;transition:border-color .25s}
+.card a:hover .go{border-color:var(--act)}
+.ph{display:grid;place-content:center;text-align:center;gap:6px;padding:20px;min-height:200px;color:var(--tx2);border:1px dashed var(--ln);background:repeating-linear-gradient(135deg,transparent 0 10px,rgba(234,230,223,.025) 10px 11px)}
+.thumb.ph{border-style:dashed;min-height:0}
+.empty{padding:40px 0;color:var(--tx2)}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.grid{grid-template-columns:1fr}}
+/* about */
+.about{display:grid;grid-template-columns:repeat(12,1fr);gap:48px 24px}
+.about .lead{grid-column:1/8;font-family:var(--serif);font-weight:300;font-size:clamp(1.7rem,3.2vw,2.8rem);line-height:1.2}
+.about .facts{grid-column:9/13}
+.about .cols{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:40px 24px;border-top:1px solid var(--ln);padding-top:36px}
+.about h3,.facts h3{margin-bottom:14px;color:var(--act)}
+.about li{padding:7px 0;border-bottom:1px solid var(--ln);color:var(--tx2);font-size:.92rem}
+.about li strong{display:block;color:var(--tx);font-weight:400}
+.about .edu{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,1fr);gap:24px;border-top:1px solid var(--ln);padding-top:36px}
+.edu h4{font-family:var(--serif);font-weight:400;font-size:1.6rem;margin:6px 0 4px;line-height:1.15}
+.edu p{color:var(--tx2);font-size:.95rem;max-width:56ch}
+@media(max-width:900px){.about .lead,.about .facts{grid-column:1/-1}.about .cols{grid-template-columns:repeat(2,1fr)}.about .edu{grid-template-columns:1fr}}
+@media(max-width:520px){.about .cols{grid-template-columns:1fr}}
+/* contact */
+.contact{text-align:left}
+.contact h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,8vw,7.4rem);line-height:.98;letter-spacing:-.02em;max-width:14ch}
+.contact p.s{color:var(--tx2);max-width:44ch;margin:28px 0 44px;font-size:1.05rem}
+.clist{border-top:1px solid var(--ln);max-width:760px}
+.clist a,.clist .off{display:flex;justify-content:space-between;gap:16px;padding:20px 0;border-bottom:1px solid var(--ln);font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.9rem);transition:padding .3s,color .3s;overflow-wrap:anywhere}
+.clist a:hover{padding-left:12px;color:var(--tx)}.clist a:hover .mono{color:var(--act)}
+.clist .off{color:var(--tx2)}
+footer.foot{border-top:1px solid var(--ln);padding:28px 0;color:var(--tx2)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a:hover{color:var(--tx)}
+#up{position:fixed;right:max(var(--pad),env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:55;width:44px;height:44px;border:1px solid var(--ln);background:var(--bg);display:grid;place-content:center;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,border-color .3s}
+#up.show{opacity:1;visibility:visible}#up:hover{border-color:var(--act)}
+/* case page */
+.crumb{padding:28px 0 0;display:flex;justify-content:space-between;color:var(--tx2);gap:12px;flex-wrap:wrap}
+.crumb a:hover{color:var(--tx)}
+.chead{padding:clamp(40px,7vw,96px) 0 clamp(36px,5vw,64px)}
+.chead .no{color:var(--act);margin-bottom:18px;display:block}
+.chead h1{font-family:var(--serif);font-weight:300;font-size:clamp(3.2rem,11vw,10rem);line-height:.92;letter-spacing:-.025em;overflow-wrap:anywhere}
+.bd{font-family:var(--serif);font-weight:300;font-size:clamp(1.3rem,2.4vw,2rem);line-height:1.25;color:var(--tx2);max-width:34ch;margin-top:clamp(18px,2.4vw,28px)}
+.cmeta4{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ln);margin-top:clamp(28px,4vw,56px)}
+.cmeta4 div{padding:16px 16px 16px 0;border-bottom:1px solid var(--ln)}.cmeta4 span{display:block;color:var(--tx2);margin-bottom:6px}
+.cmeta4 b{font-weight:400;font-size:.98rem}
+@media(max-width:700px){.cmeta4{grid-template-columns:1fr 1fr}}
+.csec{padding:clamp(48px,7vw,96px) 0;border-top:1px solid var(--ln)}
+.csec>.wrap>.sl{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.csec h2{grid-column:1/4;font-family:var(--mono);font-weight:400;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tx2)}
+.csec h2 i{font-style:normal;color:var(--act);margin-right:6px}
+.csec .body{grid-column:4/12}
+.csec .body p{font-size:clamp(1.05rem,1.6vw,1.3rem);max-width:62ch;color:var(--tx)}
+.csec .body p+p{margin-top:1.1em;color:var(--tx2)}
+.note{margin-top:20px;color:var(--tx2);border-left:1px solid var(--act);padding-left:12px}
+@media(max-width:860px){.csec h2,.csec .body{grid-column:1/-1}.csec h2{margin-bottom:6px}}
+.pal{display:flex;margin:0 0 28px;border:1px solid var(--ln)}
+.pal div{flex:1;height:96px;position:relative}.pal span{position:absolute;left:8px;bottom:6px;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;mix-blend-mode:difference;color:#fff}
+.devgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:start}
+.devfig{margin:0}
+.devgrid p{max-width:40ch}
+@media(max-width:860px){.devgrid{grid-template-columns:1fr}}
+.slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.gal{--n:var(--cols,3);--g:14px;display:flex;flex-wrap:wrap;justify-content:center;gap:28px var(--g);margin-top:clamp(28px,4vw,48px)}
+.gal figure{margin:0;flex:0 0 calc((100% - (var(--n) - 1)*var(--g))/var(--n));min-width:0}
+.fig{display:block;position:relative;width:100%;aspect-ratio:var(--fr,4/3);border:1px solid var(--ln);background:var(--s2);overflow:hidden;transition:border-color .3s}
+.fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.fig:hover{border-color:var(--tx2)}
+.gal figcaption{display:flex;gap:10px;margin-top:8px;color:var(--tx2)}.gal figcaption b{color:var(--act);font-weight:400}
+@media(max-width:860px){.gal{--n:2}}@media(max-width:560px){.gal{--n:1}.gal.p{--n:2}}
+.det{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}
+.det dl>div{padding:16px 0;border-bottom:1px solid var(--ln)}.det dt{color:var(--tx2);margin-bottom:6px}.det dd{font-size:.98rem}
+.det ul li{padding:4px 0}.det ul li::before{content:"— ";color:var(--act)}
+@media(max-width:700px){.det{grid-template-columns:1fr}}
+.next{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ln)}
+.next a{padding:clamp(28px,5vw,64px) 0;display:block;transition:background .3s}
+.next a+a{border-left:1px solid var(--ln);padding-left:clamp(20px,4vw,56px);text-align:right;padding-right:0}
+.next .t{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,5vw,4.4rem);line-height:1;display:block;margin-top:10px;transition:color .3s,letter-spacing .4s}
+.next a:hover .t{color:var(--tx);letter-spacing:.01em}.next .mono{color:var(--tx2)}
+.next a:hover .mono{color:var(--act)}
+@media(max-width:560px){.next{grid-template-columns:1fr}.next a+a{border-left:0;border-top:1px solid var(--ln);padding-left:0;text-align:left}}
+/* lightbox */
+dialog{border:0;background:rgba(10,10,10,.97);color:var(--tx);width:100vw;height:100dvh;max-width:none;max-height:none;padding:0;margin:0}
+dialog::backdrop{background:#000}
+.lb{display:grid;grid-template-rows:auto 1fr auto;height:100%;padding:16px var(--pad) calc(16px + env(safe-area-inset-bottom,0px))}
+.lb-top,.lb-bot{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.lb-top button,.lb-bot button{border:1px solid var(--ln);padding:10px 16px;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tx2)}
+.lb-top button:hover,.lb-bot button:hover{color:var(--tx);border-color:var(--tx)}
+.lb img{margin:auto;max-height:100%;max-width:100%;object-fit:contain;min-height:0}
+.lb-mid{min-height:0;display:flex;padding:14px 0}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body id="top">
+<div id="boot" role="status" aria-live="polite"><span class="mono dim">Opening archive / 001</span><div class="bar"></div></div>
+<div class="lamp" aria-hidden="true"></div><div id="ball" aria-hidden="true"><i></i></div>
+<header class="top" id="hdr"><div class="wrap">
+  <a class="brand" href="#top" aria-label="Thanzeela — home">THANZEELA</a>
+  <span class="status mono">Creative Archive / 001</span>
+  <button class="menu-btn" id="mbtn" aria-expanded="false" aria-controls="nav" aria-label="Toggle menu"><span></span><span></span></button>
+  <nav id="nav" aria-label="Primary"><ul>
+    <li><a href="#top" data-s="top">Index</a></li><li><a href="#files" data-s="files">Case Files</a></li>
+    <li><a href="#about" data-s="about">About</a></li><li><a href="#contact" data-s="contact">Contact</a></li>
+    <li><button type="button" class="rbtn" id="resumeBtn" aria-label="Open resume as a PDF in a new tab">Resume <span aria-hidden="true">↗</span></button></li></ul></nav>
+</div></header>
+<main id="view" tabindex="-1"></main>
+<footer class="foot"><div class="wrap mono"><span id="fcopy"></span><span>End of file</span><a href="#top" class="lnk">Return to top ↑</a></div></footer>
+<button id="up" aria-label="Back to top"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M7 13V1M1 6l6-5 6 5"/></svg></button>
+<dialog id="lb" aria-label="Image viewer"><div class="lb"><div class="lb-top mono"><span id="lbn" class="dim"></span><button id="lbx">Close ✕</button></div><div class="lb-mid"><img id="lbi" alt=""></div><div class="lb-bot mono"><button id="lbp">← Prev</button><span id="lbc" class="dim"></span><button id="lbnx">Next →</button></div></div></dialog>
+
+<script>
+/* image files live in the assets/ folder */
+const IMG={
+"gel_sign": {
+"s": "assets/gel_sign.jpg",
+"w": 1500,
+"h": 1000
+},
+"gel_lids": {
+"s": "assets/gel_lids.jpg",
+"w": 1500,
+"h": 1125
+},
+"gel_tubs": {
+"s": "assets/gel_tubs.jpg",
+"w": 1024,
+"h": 1024
+},
+"gel_hand": {
+"s": "assets/gel_hand.jpg",
+"w": 1500,
+"h": 1500
+},
+"gel_tub2": {
+"s": "assets/gel_tub2.jpg",
+"w": 1500,
+"h": 1125
+},
+"jv_tee": {
+"s": "assets/jv_tee.jpg",
+"w": 1092,
+"h": 1350
+},
+"jv_pour": {
+"s": "assets/jv_pour.jpg",
+"w": 1080,
+"h": 1350
+},
+"jv_box": {
+"s": "assets/jv_box.jpg",
+"w": 1083,
+"h": 1350
+},
+"jv_barista": {
+"s": "assets/jv_barista.jpg",
+"w": 1080,
+"h": 1350
+},
+"jv_latte": {
+"s": "assets/jv_latte.jpg",
+"w": 1080,
+"h": 1350
+},
+"st_flat": {
+"s": "assets/st_flat.jpg",
+"w": 1500,
+"h": 1125
+},
+"st_sleeve": {
+"s": "assets/st_sleeve.jpg",
+"w": 1500,
+"h": 1125
+},
+"st_card": {
+"s": "assets/st_card.jpg",
+"w": 1500,
+"h": 1125
+},
+"st_mark": {
+"s": "assets/st_mark.jpg",
+"w": 1500,
+"h": 1500
+},
+"st_tote": {
+"s": "assets/st_tote.jpg",
+"w": 1500,
+"h": 1125
+},
+"po_forget": {
+"s": "assets/po_forget.jpg",
+"w": 1080,
+"h": 1350
+},
+"po_observe": {
+"s": "assets/po_observe.jpg",
+"w": 1080,
+"h": 1350
+},
+"po_moon": {
+"s": "assets/po_moon.jpg",
+"w": 954,
+"h": 1350
+},
+"po_walk": {
+"s": "assets/po_walk.jpg",
+"w": 1080,
+"h": 1350
+},
+"po_burger": {
+"s": "assets/po_burger.jpg",
+"w": 1080,
+"h": 1350
+},
+"po_eyes": {
+"s": "assets/po_eyes.jpg",
+"w": 1080,
+"h": 1350
+},
+"po_moment": {
+"s": "assets/po_moment.jpg",
+"w": 1080,
+"h": 1350
+},
+"po_think": {
+"s": "assets/po_think.jpg",
+"w": 1080,
+"h": 1350
+},
+"pk_cc": {
+"s": "assets/pk_cc.jpg",
+"w": 1080,
+"h": 1350
+},
+"pk_cc_die": {
+"s": "assets/pk_cc_die.jpg",
+"w": 1254,
+"h": 1254
+},
+"pk_nc1": {
+"s": "assets/pk_nc1.jpg",
+"w": 1448,
+"h": 1086
+},
+"pk_nc2": {
+"s": "assets/pk_nc2.jpg",
+"w": 1500,
+"h": 1125
+},
+"pk_ve": {
+"s": "assets/pk_ve.jpg",
+"w": 1048,
+"h": 1350
+},
+"pk_ve_die": {
+"s": "assets/pk_ve_die.jpg",
+"w": 980,
+"h": 1350
+},
+"tn_flat": {
+"s": "assets/tn_flat.jpg",
+"w": 1500,
+"h": 1125
+},
+"tn_fold": {
+"s": "assets/tn_fold.jpg",
+"w": 1448,
+"h": 1086
+},
+"dev_gel": {
+"s": "assets/dev_gel.svg",
+"w": 1000,
+"h": 800
+},
+"dev_jv": {
+"s": "assets/dev_jv.svg",
+"w": 1000,
+"h": 800
+},
+"dev_st": {
+"s": "assets/dev_st.svg",
+"w": 1000,
+"h": 800
+},
+"dev_cc": {
+"s": "assets/dev_cc.svg",
+"w": 1000,
+"h": 800
+},
+"dev_nc": {
+"s": "assets/dev_nc.jpg",
+"w": 1100,
+"h": 982
+},
+"dev_ve": {
+"s": "assets/dev_ve.svg",
+"w": 1000,
+"h": 800
+},
+"dev_tn": {
+"s": "assets/dev_tn.svg",
+"w": 1000,
+"h": 800
+}
+};
+const PAL={"gelatte": ["#53532d", "#b3a78a", "#787540", "#cbc1a7", "#3c2717"], "java": ["#191816", "#8d877e", "#5a493a", "#8a5c47", "#adadac"], "stitch": ["#3e3c27", "#151411", "#69655c", "#9fa493", "#fdf9e2"], "terranest": ["#1c1609", "#8b6f4c", "#aea193", "#453724", "#565148"]};
+/* ================= EDITABLE CONTENT =================
+   Everything below is plain data. Replace text, years, links, images (IMG keys) here. */
+const CFG={
+  resumeFile:'resume.pdf', /* ← name of the resume PDF in this repo. Change it here if you upload a differently named PDF. */
+  name:'Thanzeela S', year:2026, status:'Open',
+  hero:{meta:'Personal Archive / Visual Design / 2026',
+    name:'Thanzeela <em>Portfolio</em>', h1:'An archive of ideas, identities, and visual experiments.',
+    sub:'I explore design through visual systems, thoughtful composition, and stories told through images.'},
+  about:{
+    lead:"Creative and detail-oriented designer with a foundation in graphic design and a passion for visual storytelling. Skilled in creating posters, social media creatives, and branding assets while continuously learning and refining design skills.",
+    bio:"Currently studying B.Sc. Animation (VFX and Film Production) in Madurai, Tamil Nadu.",
+    interests:['Brand identity & visual systems','Packaging design','Poster & editorial composition','Social media creatives','UI/UX design','Video editing & motion','3D modelling & texturing'],
+    skills:['Graphic design','Brand identity','Packaging design','Social media creatives','UI/UX design','Video editing','3D modelling & texturing'],
+    tools:['Adobe Photoshop','Adobe Illustrator','Figma','After Effects','DaVinci Resolve','Blender','Autodesk Maya','Substance 3D Painter'],
+    education:{title:'B.Sc. Animation (VFX and Film Production)',place:'Subbalakshami Lakshmipathy College of Science, Madurai',when:'Jul 2024 — Apr 2027'},
+    intern:{title:'Social Media Marketing Designer — Internship',place:'Zooq Films, Madurai, Tamil Nadu',when:'Dec 2025 — Feb 2026',text:'Designed visuals and marketing creatives for YouTube growth, including thumbnails and social media assets, with attention to brand consistency and platform-specific needs.'}},
+  contact:{email:'thanzeelas04@gmail.com',
+    links:[{label:'LinkedIn',url:'https://www.linkedin.com/in/thanzeela-s/'}]}, /* add full https:// URLs; empty = shown as "add link" */
+  projects:[
+  {id:'CF-001',slug:'gelatte',title:'Gelatte',cat:'Branding',year:'2025',tag:'Ice cream & coffee brand identity',
+   desc:'A warm ice cream and coffee brand where creamy gelato meets café culture.',cover:'gel_sign',fr:'1/1',
+   summary:['Gelatte is an ice cream and coffee brand identity. The file documents a logo mark and its application across a storefront sign, ice cream tubs, coffee cup lids and takeaway cups.','The design challenge: one compact mark that reads clearly on very different surfaces — a hanging sign, a printed lid, a hand-held cup.'],
+   direction:['The mark combines a coffee cup with a script wordmark inside a circular badge, repeated as a ring of small lettering on packaging. The palette is olive green, cream and dark chocolate brown.','Audience and original brief: add your own notes here.'],
+   palette:'gelatte',dev:['Logo sketches','Typography study','Packaging dielines'],
+   gallery:[['gel_sign','Hanging storefront sign','Gelatte logo on a hanging wooden sign against a brick wall'],['gel_lids','Cup lids, overhead','Overhead view of coffee cups and lids printed with the Gelatte mark on an olive background'],['gel_tubs','Ice cream tubs','Gelatte ice cream tubs with circular badge lettering on olive green'],['gel_hand','Takeaway cup','Hand holding a brown Gelatte takeaway cup'],['gel_tub2','Tub with supporting print','Gelatte tub beside a brown printed card']],
+   role:'Designer',deliverables:['Logo mark & wordmark','Ice cream tub packaging','Coffee cup & lid graphics','Signage mockup'],
+   decisions:['Circular badge so the mark survives lids, cups and signs','Restricted olive / cream / brown palette for a warm, food-led feel']},
+  {id:'CF-002',slug:'java',title:'JAVA',cat:'Branding',year:'2026',tag:'Modern coffee brand logo',
+   desc:'A modern coffee brand with a bold, dark identity built for everyday café life.',cover:'jv_tee',fr:'4/5',
+   summary:['JAVA is a modern coffee brand logo. The file shows the mark on staff apparel, takeaway cups and black packaging boxes in use.','The design challenge: a bold, hand-made-feeling mark that stays legible on black fabric and cup sleeves.'],
+   direction:['A brush-textured, circular white mark on a black base keeps the brand dark, confident and tactile. Imagery shows the identity in context — barista service, pouring, packing.','Audience and original brief: add your own notes here.'],
+   palette:'java',dev:['Logo explorations','Brush texture tests','Application plan'],
+   gallery:[['jv_tee','Staff tee','Barista wearing a black tee with the JAVA mark'],['jv_pour','Iced coffee, branded cup','Barista pouring coffee over ice into a JAVA cup'],['jv_box','Packaging boxes','Hands holding black JAVA boxes'],['jv_barista','Apron detail','Barista in a black JAVA apron preparing a drink'],['jv_latte','Latte pour','Barista in a JAVA cap pouring milk into a branded cup']],
+   role:'Designer',deliverables:['Logo mark','Apparel & apron application','Cup and box packaging'],
+   decisions:['White-on-black contrast for fabric and print','Textured circular mark for a crafted look']},
+  {id:'CF-003',slug:'stitch',title:'Stitch',cat:'Branding',year:'2026',tag:'Apparel designing brand identity',
+   desc:'An apparel designing brand that turns the craft of stitching into its visual language.',cover:'st_flat',fr:'4/3',
+   summary:['Stitch is an apparel designing brand identity. The file shows a leaf mark and cross-stitch pattern across stationery, a business card, a wrapped label and a tote bag.','The design challenge: let the craft of stitching become the brand’s visual language.'],
+   direction:['A cross-stitched motif is repeated as pattern and as an oversized mark, paired with a mint accent on deep olive and charcoal. The lowercase wordmark stays quiet so the pattern leads.','Audience and original brief: add your own notes here.'],
+   palette:'stitch',dev:['Motif sketches','Pattern grid study','Stationery layout'],
+   gallery:[['st_flat','Identity flat lay','Flat lay of Stitch stationery, phone mockup and patterned print on a dark surface'],['st_sleeve','Wrapped label','Dark paper sleeve with the Stitch leaf mark'],['st_card','Business card','Stitch business card on a patterned olive background'],['st_mark','Cross-stitch mark','Cross-stitch pattern mark in cream and mint on olive'],['st_tote','Tote bag','Olive Stitch tote bag hanging from a line']],
+   role:'Designer',deliverables:['Logo & leaf mark','Pattern system','Business card & stationery','Tote bag'],
+   decisions:['Pattern-first system to echo stitching','Mint accent against dark olive for contrast']},
+  {id:'CF-004',slug:'poster-series',title:'Poster Series',cat:'Graphic Design',year:'2025-26',tag:'Eight poster compositions',lean:true,
+   desc:'Eight posters: statement pieces, a lyric poster, a promotional burger creative and typographic experiments.',cover:'po_forget',fr:'4/5',cols:4,
+   summary:['A series of eight poster designs: expressive typographic pieces, a lyric poster, a promotional burger creative and image-led statement posters. Each explores a different mood while keeping composition and type at the centre.'],
+   gallery:[['po_forget','Forget Me Not','Poster titled Forget Me Not with a grey sweater on a chair against orange'],['po_observe','Art of Observing','Poster titled Art of Observing with a glowing-eyed portrait in red and gold'],['po_moon','Lyric poster','Monochrome moon poster with handwritten lyrics'],['po_walk','Walk Your Own Line','Minimal poster of a figure walking over a wireframe grid'],['po_burger','Super Delicious Burger','Promotional burger poster on a dark brick background'],['po_eyes','Dead Eyes','Dark poster of an eye with skeletal hands'],['po_moment','Live in the Moment','Poster of swimmers in sparkling water'],['po_think','Think Beyond','Poster of a thinker statue against a red sun on beige']],
+   role:'Designer',deliverables:['8 poster layouts','Typographic treatments','Image compositing'],
+   decisions:['Distinct palette per poster to keep each piece its own','Type treatment led by the subject matter']},
+  {id:'CF-005',slug:'coffee-club',title:'Coffee Club',cat:'Print & Package',year:'2026',tag:'Kraft coffee box packaging',
+   desc:'Kraft packaging for roasted coffee beans, with a hand-lettered wordmark.',cover:'pk_cc',fr:'1/1',cols:2,
+   summary:['Coffee Club is a kraft packaging design for roasted coffee beans. The file shows the finished boxes alongside the flat dieline.','The design challenge: present roast level, origin and brewing notes clearly on a simple natural carton.'],
+   direction:['A hand-lettered Coffee Club wordmark sits on natural kraft board, with small black type for tasting notes, roast level and origin. The single-ink look keeps the focus on the product.','Add the brief and audience here.'],
+   dev:['Dieline drafts','Label hierarchy','Material notes'],
+   gallery:[['pk_cc','Coffee Club boxes','Two kraft Coffee Club coffee boxes'],['pk_cc_die','Coffee Club dieline','Flat dieline of the Coffee Club box']],
+   role:'Designer',deliverables:['Box packaging','Flat dieline','Label copy layout'],decisions:['Dieline shown beside the render to document structure','Natural kraft with one ink colour']},
+  {id:'CF-006',slug:'nocaff',title:'NOCAFF',cat:'Print & Package',year:'2026',tag:'Cold brew can series',
+   desc:'A colour-coded cold brew can series in blue, green and yellow.',cover:'pk_nc2',fr:'4/3',cols:2,
+   summary:['NOCAFF is a cold brew can series, shown as a hero shot on stone with ice and as a diagonal repeat pattern.','The design challenge: separate colour variants while keeping one strong shared can design.'],
+   direction:['Bold condensed lettering runs vertically up each can, with a stylised “F” detail. Colour does the work of telling the variants apart.','Add the brief and audience here.'],
+   dev:['Can layout drafts','Colour variants','Lettering study'],
+   gallery:[['pk_nc1','NOCAFF cans','Blue, green and yellow NOCAFF cold brew cans on stone with ice'],['pk_nc2','NOCAFF pattern','Diagonal arrangement of NOCAFF cans']],
+   role:'Designer',deliverables:['Can design','Colour variants','Lifestyle & pattern renders'],decisions:['Vertical lettering to suit the can shape','One layout, three colourways']},
+  {id:'CF-007',slug:'verto',title:'Verto',cat:'Print & Package',year:'2026',tag:'Fragrance carton packaging',
+   desc:'An ornamental fragrance carton with a calligraphic wordmark and floral detail.',cover:'pk_ve',fr:'4/5',cols:2,
+   summary:['Verto is a fragrance carton design, shown as standing cartons and as a flat dieline with product detail panels.','The design challenge: make a printed carton feel elegant while still carrying fragrance notes and product details.'],
+   direction:['A calligraphic wordmark is paired with fine floral ornament and a warm orange accent on natural board. Small panels hold fragrance notes and product information.','Add the brief and audience here.'],
+   dev:['Ornament sketches','Panel layout','Dieline drafts'],
+   gallery:[['pk_ve','Verto cartons','Verto fragrance cartons on a concrete surface'],['pk_ve_die','Verto dieline','Flat dieline of the Verto carton']],
+   role:'Designer',deliverables:['Carton design','Flat dieline','Product detail panels'],decisions:['Ornament kept fine so the wordmark leads','Single warm accent against neutral board']},
+  {id:'CF-008',slug:'terranest',title:'Terranest Studio',cat:'Print & Package',year:'2026',tag:'Tri-fold brochure',
+   desc:'A tri-fold brochure for an interior design studio, in earthy greens and warm wood tones.',cover:'tn_flat',fr:'4/3',cols:2,
+   summary:['A tri-fold brochure for Terranest Studio, an interiors brand. It combines lifestyle imagery, a short service list and a monogram logo.','The design challenge: keep a service-heavy brochure calm, warm and easy to scan.'],
+   direction:['Muted green panels with rounded text blocks sit over warm interior photography. The headline “Design with purpose. Live with meaning.” frames the brand voice.','Add the brief and audience here.'],
+   palette:'terranest',dev:['Layout thumbnails','Grid & panel structure','Copy hierarchy'],
+   gallery:[['tn_flat','Brochure repeat','Tri-fold Terranest Studio brochures arranged diagonally on a gold background'],['tn_fold','Brochure, open','Open Terranest Studio tri-fold brochure on a concrete surface']],
+   role:'Designer',deliverables:['Tri-fold brochure layout','Logo monogram use'],decisions:['Green text panels for contrast over photography','Clear panel order from message to services']}
+  ]};
+
+/* Design Development detail images: [image key, caption, alt] — swap in real sketches/process shots when you have them */
+const DEV={ /* [image key, caption, alt, kind] — kind 'sheet' = flat logo construction, 'crop' = detail from final artwork */
+ gelatte:['dev_gel','Flat logo redraw — badge, wordmark and tagline with construction guides','Flat construction drawing of the Gelatte logo on grid paper, with guide circles, anchor points and dimensions','sheet'],
+ java:['dev_jv','Flat logo redraw — brush-lettered mark with guide circles and anchor points','Flat construction drawing of the JAVA logo on grid paper, with guide circles, anchor points and dimensions','sheet'],
+ stitch:['dev_st','Flat logo redraw — cross-stitch mark on its stitch grid','Flat construction drawing of the Stitch cross-stitch mark on grid paper, with its stitch grid and anchor points','sheet'],
+ 'coffee-club':['dev_cc','Flat logo redraw — hand-lettered wordmark with guides','Flat construction drawing of the Coffee Club hand-lettered logo on grid paper, with guides and anchor points','sheet'],
+ nocaff:['dev_nc','Lettering detail — can typography close-up','Close-up of NOCAFF can lettering in blue, green and yellow','crop'],
+ verto:['dev_ve','Flat logo redraw — calligraphic wordmark with proportion circles','Flat construction drawing of the Verto calligraphic wordmark on grid paper, with proportion circles and anchor points','sheet'],
+ terranest:['dev_tn','Flat logo redraw — monogram and wordmark with construction guides','Flat construction drawing of the Terranest Studio monogram and wordmark on grid paper, with guides and anchor points','sheet']};
+/* ================= APP ================= */
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const view=$('#view'),P=CFG.projects,CATS=['All','Branding','Graphic Design','Print & Package'];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const img=(k,alt,extra='')=>{const m=IMG[k];return `<img src="${m.s}" width="${m.w}" height="${m.h}" alt="${esc(alt)}" decoding="async" ${extra}>`};
+let state={cat:'All',view:null};
+
+function cardHTML(p){
+  const thumb=p.ph?`<div class="thumb ph"><span class="mono">Placeholder</span><span class="mono dim">Awaiting assets</span></div>`
+   :`<div class="thumb">${img(p.cover,p.title+' — cover image','loading="lazy"')}<span class="tag mono">${p.id}</span></div>`;
+  return `<article class="card" data-cat="${esc(p.cat)}"><a href="#/case/${p.slug}" aria-label="View case file ${p.id}: ${esc(p.title)}">${thumb}
+   <div class="cmeta mono"><span class="ac">${p.id}</span><span>${p.cat} · ${p.year}</span></div>
+   <h3>${esc(p.title)}</h3><p class="d">${esc(p.desc)}</p><span class="go mono">View case file →</span></a></article>`}
+
+function list(a){return a.map(x=>`<li>${esc(x)}</li>`).join('')}
+function homeHTML(){
+  const A=CFG.about,H=CFG.hero,C=CFG.contact;
+  return `<div class="wrap"><div class="hero">
+   <div class="hero-top mono"><span>${H.meta}</span><svg class="reg" viewBox="0 0 44 44" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="22" cy="22" r="9"/><path d="M22 0v14M22 30v14M0 22h14M30 22h14"/></svg></div>
+   <div class="hero-main"><div class="hn"><h1>${H.name}</h1><p class="hsub">${H.h1}</p></div>
+    <ol class="hero-idx mono" aria-label="Case file shortcuts">${P.filter(p=>!p.ph).slice(0,6).map(p=>`<li><a href="#/case/${p.slug}"><b>${p.id}</b><span>${esc(p.title)}</span></a></li>`).join('')}</ol></div>
+   <div class="hero-low"><p>${H.sub}</p><div class="ctas"><a class="btn" href="#files">Explore Case Files <span aria-hidden="true">→</span></a><a class="btn ghost" href="#about">About the Designer</a></div></div>
+  </div></div>
+  <section id="files"><div class="wrap">
+   <div class="sh"><h2>Case File Index</h2><span class="mono dim" id="count" aria-live="polite"></span></div>
+   <div class="filters" role="group" aria-label="Filter case files">${CATS.map(c=>`<button type="button" data-c="${esc(c)}" aria-pressed="${c===state.cat}">${esc(c)}<sup>${c==='All'?P.length:P.filter(p=>p.cat===c).length}</sup></button>`).join('')}</div>
+   <div class="grid" id="grid">${P.map(cardHTML).join('')}</div><p class="empty mono" id="empty" hidden>No files in this category yet.</p>
+  </div></section>
+  <section id="about"><div class="wrap">
+   <div class="sh"><h2>About</h2></div>
+   <div class="about">
+    <p class="lead">${esc(A.lead)}</p>
+    <div class="facts"><h3 class="mono">Profile</h3><p class="dim">${esc(A.bio)}</p></div>
+    <div class="cols"><div><h3 class="mono">Design interests</h3><ul>${list(A.interests)}</ul></div><div><h3 class="mono">Skills</h3><ul>${list(A.skills)}</ul></div><div><h3 class="mono">Software &amp; tools</h3><ul>${list(A.tools)}</ul></div></div>
+    <div class="edu"><div><h3 class="mono ac">Education</h3><h4>${esc(A.education.title)}</h4><p>${esc(A.education.place)}<br><span class="mono">${A.education.when}</span></p></div>
+     <div><h3 class="mono ac">Internship</h3><h4>${esc(A.intern.title)}</h4><p>${esc(A.intern.place)} · <span class="mono">${A.intern.when}</span></p><p style="margin-top:10px">${esc(A.intern.text)}</p></div></div>
+   </div></div></section>
+  <section id="contact"><div class="wrap contact"><span class="mono ac">Closing file</span><h2 style="margin-top:20px">Have something worth documenting?</h2>
+   <p class="s">For collaborations, opportunities, or creative conversations, get in touch.</p>
+   <div class="clist"><a href="mailto:${C.email}" id="mailLink"><span>${esc(C.email)}</span><span class="mono dim">Email ↗</span></a>
+   ${C.links.map(l=>l.url?`<a href="${esc(l.url)}" target="_blank" rel="noopener"><span>${l.label}</span><span class="mono dim">Open ↗</span></a>`:`<div class="off"><span>${l.label}</span><span class="mono">Add link in CFG</span></div>`).join('')}</div></div></section>`}
+function wireContact(){const a=$('#mailLink');if(!a)return;
+  a.onclick=e=>{ /* desktop: Gmail compose in a new tab with the address already in the To box; touch devices use the phone's mail app via mailto */
+    if(!matchMedia('(pointer:fine)').matches)return;e.preventDefault();
+    const w=window.open('https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(CFG.contact.email),'_blank');if(!w)location.href=a.href}}
+
+function caseHTML(i){
+  const p=P[i],prev=P[(i-1+P.length)%P.length],next=P[(i+1)%P.length];let n=0;const N=()=>String(++n).padStart(2,'0');
+  const sec=(t,b)=>`<section class="csec"><div class="wrap"><div class="sl"><h2><i>${N()}</i>— ${t}</h2><div class="body">${b}</div></div></div></section>`;
+  const slots=(p.dev||[]).map(d=>`<div class="ph"><span class="mono">${d}</span><span class="mono dim">Placeholder — awaiting asset</span></div>`).join('');
+  const pal=p.palette?`<div class="pal" role="img" aria-label="Colour palette sampled from final artwork">${PAL[p.palette].map(c=>`<div style="background:${c}"><span>${c.toUpperCase()}</span></div>`).join('')}</div><p class="mono dim" style="margin-bottom:24px">Palette sampled from the final artwork</p>`:'';
+  const gal=p.gallery.length?`<div class="gal ${p.cols===4?'p':''}" style="--cols:${p.cols||3};--fr:${p.fr||'4/3'}">${p.gallery.map((g,k)=>`<figure><button class="fig" data-n="${k}" aria-label="Enlarge: ${esc(g[1])}">${img(g[0],g[2],'loading="lazy"')}</button><figcaption class="mono"><b>${String(k+1).padStart(2,'0')}</b>${esc(g[1])}</figcaption></figure>`).join('')}</div>`
+   :`<div class="ph" style="min-height:320px"><span class="mono">Final evidence — not yet filed</span><span class="mono dim">Add images to this project's gallery in CFG</span></div>`;
+  const ev=()=>`<section class="csec"><div class="wrap"><div class="sl"><h2><i>${N()}</i>— Final Evidence</h2><div class="body"><p>${p.gallery.length?`${p.gallery.length} exhibit${p.gallery.length>1?'s':''} filed. Select any image to enlarge.`:'No exhibits filed yet.'}</p></div></div>${gal}</div></section>`;
+  const det=`<div class="det"><dl><div><dt class="mono">Role</dt><dd>${p.role}</dd></div><div><dt class="mono">Deliverables</dt><dd><ul>${list(p.deliverables)}</ul></dd></div><div><dt class="mono">Toolset (portfolio-wide)</dt><dd>${CFG.about.tools.slice(0,2).join(', ')}, Figma, Canva, Affinity</dd></div></dl><dl><div><dt class="mono">Design decisions</dt><dd><ul>${list(p.decisions)}</ul></dd></div></dl></div>`;
+  let h=`<div class="wrap"><div class="crumb mono"><a href="#files">← Case files</a><span>${P.indexOf(p)+1} / ${P.length}</span></div>
+   <header class="chead"><span class="no mono">File no. ${p.id}</span><h1>${esc(p.title)}</h1><p class="bd">${esc(p.desc)}</p>
+   <div class="cmeta4 mono"><div><span>File number</span><b class="ac">${p.id}</b></div><div><span>Project title</span><b>${esc(p.title)}</b></div><div><span>Classification</span><b>${esc(p.cat)}</b></div><div><span>Project year</span><b>${p.year}</b></div></div></header></div>`;
+  h+=sec('Case Summary',p.summary.map(t=>`<p>${esc(t)}</p>`).join(''));
+  if(!p.lean){h+=sec('Creative Direction',p.direction.map(t=>`<p>${esc(t)}</p>`).join(''));
+    const dv=DEV[p.slug];
+    h+=sec('Design Development',dv?`<div class="devgrid"><figure class="devfig"><button class="fig" id="devb" style="--fr:5/4" aria-label="Enlarge: ${esc(dv[1])}">${img(dv[0],dv[2],'loading="lazy"')}</button></figure><div><span class="mono ac">${dv[3]==='sheet'?'Logo construction':'Detail study'}</span><p style="margin:10px 0 24px">${esc(dv[1])}</p>${pal}<p class="note mono">${dv[3]==='sheet'?'Flat redraw traced from the final logo, with indicative guides, circles and anchor points. It is not the original working file. Sketches and research can be added when supplied.':'Close-up taken from the final artwork. Sketches and research can be added here when supplied.'}</p></div></div>`
+     :pal+`<div class="slots">${slots}</div><p class="note mono">Process material will be added here when supplied. These are placeholders, not final work.</p>`)}
+  h+=ev();h+=sec('Project Details',det);
+  h+=`<section class="csec" style="padding-bottom:0"><div class="wrap"><div class="mono dim" style="margin-bottom:18px"><i style="font-style:normal" class="ac">${N()}</i> — Next file</div></div><div class="wrap"><div class="next"><a href="#/case/${prev.slug}"><span class="mono">← Previous · ${prev.id}</span><span class="t">${esc(prev.title)}</span></a><a href="#/case/${next.slug}"><span class="mono">Next · ${next.id} →</span><span class="t">${esc(next.title)}</span></a></div></div></section>`;
+  return h}
+
+/* resume: opens the PDF named in CFG.resumeFile (a file next to index.html) in a new tab */
+function openResume(){window.open(CFG.resumeFile+'?v='+Date.now(),'_blank')}
+/* filters */
+function applyFilter(){
+  let n=0;$$('.card').forEach(c=>{const ok=state.cat==='All'||c.dataset.cat===state.cat;c.hidden=!ok;if(ok)n++});
+  $$('.filters button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.c===state.cat));
+  $('#count').textContent=`${n} file${n===1?'':'s'} shown`;$('#empty').hidden=n>0;
+}
+/* lightbox */
+const lb=$('#lb');let lbList=[],lbI=0;
+function lbShow(){const g=lbList[lbI];const i=$('#lbi');i.src=IMG[g[0]].s;i.alt=g[2];$('#lbn').textContent=g[1];$('#lbc').textContent=`${lbI+1} / ${lbList.length}`}
+function lbMove(d){lbI=(lbI+d+lbList.length)%lbList.length;lbShow()}
+$('#lbx').onclick=()=>lb.close();$('#lbp').onclick=()=>lbMove(-1);$('#lbnx').onclick=()=>lbMove(1);
+lb.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')lbMove(-1);if(e.key==='ArrowRight')lbMove(1)});
+lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
+/* routing */
+function setTitle(t,d){document.title=t;$('meta[name=description]').content=d}
+function route(){
+  const h=location.hash,m=h.match(/^#\/case\/([\w-]+)/);
+  closeMenu();
+  if(m){const i=P.findIndex(p=>p.slug===m[1]);if(i<0){location.hash='#files';return}
+    state.view='case:'+m[1];const p=P[i];view.innerHTML=caseHTML(i);window.scrollTo(0,0);
+    setTitle(`${p.id} ${p.title} — Thanzeela S`,`${p.title}: ${p.desc}`);
+    lbList=p.gallery;$$('.fig[data-n]').forEach(f=>f.onclick=()=>{lbList=p.gallery;lbI=+f.dataset.n;lbShow();lb.showModal()});
+    const db=$('#devb');if(db)db.onclick=()=>{lbList=[DEV[p.slug]];lbI=0;lbShow();lb.showModal()};
+    view.style.animation='none';view.offsetHeight;view.style.animation='';
+  }else{
+    if(state.view!=='home'){state.view='home';view.innerHTML=homeHTML();setTitle('Thanzeela S — Creative Archive / 001','Thanzeela S — multidisciplinary designer. A private archive of branding, packaging, poster and visual design case files.');
+      $$('.filters button').forEach(b=>b.onclick=()=>{state.cat=b.dataset.c;applyFilter()});applyFilter();wireContact();
+      view.style.animation='none';view.offsetHeight;view.style.animation='';
+      const id=h.slice(1),t=id&&document.getElementById(id);t?t.scrollIntoView():window.scrollTo(0,0)}
+    else if(h==='#top'||!h)window.scrollTo(0,0);
+  }
+  markNav();
+}
+/* nav */
+const hdr=$('#hdr'),mbtn=$('#mbtn');
+function closeMenu(){hdr.classList.remove('open');mbtn.setAttribute('aria-expanded','false')}
+mbtn.onclick=()=>{const o=hdr.classList.toggle('open');mbtn.setAttribute('aria-expanded',o)};
+$('#resumeBtn').onclick=()=>{closeMenu();openResume()};
+addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+function markNav(){const sects=state.view==='home'?['files','about','contact'].map(id=>document.getElementById(id)).filter(Boolean):[];
+  $$('nav a').forEach(a=>a.classList.remove('cur'));if(state.view&&state.view.startsWith('case'))$('nav a[data-s=files]').classList.add('cur');
+  if(io)io.disconnect();sects.forEach(s=>io&&io.observe(s))}
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){$$('nav a').forEach(a=>a.classList.toggle('cur',a.dataset.s===e.target.id))}}),{rootMargin:'-40% 0px -55% 0px'}):null;
+/* back to top */
+const up=$('#up');addEventListener('scroll',()=>up.classList.toggle('show',scrollY>900),{passive:true});
+up.onclick=()=>{scrollTo({top:0,behavior:reduce?'auto':'smooth'});if(location.hash==='#top')return;history.replaceState(null,'',location.pathname+location.search)};
+/* light-ball cursor */
+if(matchMedia('(pointer:fine)').matches){
+  const b=$('#ball'),r=document.documentElement;r.classList.add('has-ball');let x=innerWidth/2,y=innerHeight/2,tx=x,ty=y;
+  addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;b.classList.add('on');r.style.setProperty('--mx',tx+'px');r.style.setProperty('--my',ty+'px')},{passive:true});
+  document.addEventListener('pointerleave',()=>b.classList.remove('on'));
+  addEventListener('pointerover',e=>b.classList.toggle('big',!!e.target.closest('a,button,.fig')));
+  (function f(){x+=(tx-x)*(reduce?1:.22);y+=(ty-y)*(reduce?1:.22);b.style.transform=`translate3d(${x}px,${y}px,0)`;requestAnimationFrame(f)})();
+}
+$('#fcopy').textContent=`© ${CFG.year} ${CFG.name}`;
+addEventListener('hashchange',route);route();
+setTimeout(()=>{$('#boot').classList.add('done')},reduce?0:950);
+</script>
+</body>
+</html>
